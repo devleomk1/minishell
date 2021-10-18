@@ -6,9 +6,11 @@
 /*   By: jisokang <jisokang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 12:29:33 by jisokang          #+#    #+#             */
-/*   Updated: 2021/10/16 16:22:57 by jisokang         ###   ########.fr       */
+/*   Updated: 2021/10/17 20:38:57 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/* gcc -lreadline *.c */
 
 /* readline함수를 사용하기위한 헤더 */
 # include <readline/readline.h>
