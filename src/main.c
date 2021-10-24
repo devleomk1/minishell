@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 12:29:33 by jisokang          #+#    #+#             */
-/*   Updated: 2021/10/24 15:45:29 by jisokang         ###   ########.fr       */
+/*   Updated: 2021/10/24 20:11:03 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,54 @@
 /* free함수를 사용하기위한 헤더 */
 # include <stdlib.h>
 
-//#include "minishell.h"
+# include "../lib/include/libft.h"
+# include "color.h"
+
+#define		SPACE	1
+# define	DO_QUOTE	"\""
 
 int	parse(char *script)
 {
-	printf("type : %s\n", script);
+	char	**str;
+	int		i;
+	int		j;
+
+	str = ft_split(script, ' ');
+	/* linked list로 구현 예정 */
+	i = 0;
+	while (str[i] != NULL)
+	{
+		j = 0;
+		while (str[i][j] != '\0')
+		{
+			// if (ft_strchr(DO_QUOTE, str[i][j]) != NULL)
+			if (str[i][j] == '\"')
+			{
+				printf("DOUBLE IN %d\n", j);
+				j++;
+				while (str[i][j] != '\0' && str[i][j] != '\"')
+				{
+					printf("%d - %c\n", j, str[i][j]);
+					if (str[i][j] == ' ')
+					{
+						str[i][j] = SPACE;
+						printf("SPACE CHANGE\n");
+					}
+					j++;
+				}
+			}
+			else
+				j++;
+		}
+		i++;
+	}
+	j = 0;
+	while (j < i)
+	{
+		printf("[%s]\n", str[j]);
+		j++;
+	}
+	printf("value : %s\n", script);
 	return (EXIT_SUCCESS);
 }
 
