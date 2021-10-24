@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 12:29:33 by jisokang          #+#    #+#             */
-/*   Updated: 2021/10/17 20:38:57 by jisokang         ###   ########.fr       */
+/*   Updated: 2021/10/24 13:47:09 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,12 @@
 # include <stdlib.h>
 
 //#include "minishell.h"
+
+int	parse(char *script)
+{
+	printf("type : %s\n", script);
+	return (EXIT_SUCCESS);
+}
 
 int	main(void)
 {
