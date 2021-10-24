@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 12:29:33 by jisokang          #+#    #+#             */
-/*   Updated: 2021/10/24 13:47:09 by jisokang         ###   ########.fr       */
+/*   Updated: 2021/10/24 15:45:29 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,10 @@ int	main(void)
 		/* readline함수가 호출되면 인자(prompt : )를 터미널에 출력하고 저장할 라인을 입력받는다 */
 		str = readline("prompt : ");/* read함수는 저장한 문자열의 메모리주소를 반환한다 */
 		if (str)/* 입력이 된다면 (주소가 존재한다면) */
+		{
 			printf("%s\n", str);/* 주소안에 문자열을 출력해보자 */
+			parse(str);
+		}
 		else/* str = NULL 이라면 (EOF, cntl + D)*/
 			break ;/* 반복문을 탈출해준다.*/
 	/* add_history에 저장된 문자열은 up & down 방향키를 이용해 확인할수있다 */
