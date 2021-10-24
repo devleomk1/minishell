@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 12:29:33 by jisokang          #+#    #+#             */
-/*   Updated: 2021/10/24 20:11:03 by jisokang         ###   ########.fr       */
+/*   Updated: 2021/10/24 20:32:41 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,8 @@ int	parse(char *script)
 	int		j;
 
 	str = ft_split(script, ' ');
-	/* linked list로 구현 예정 */
+	/* SPACE를 추가 하기 어려움
+	-> linked list로 구현 예정 */
 	i = 0;
 	while (str[i] != NULL)
 	{
