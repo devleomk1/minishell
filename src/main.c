@@ -6,32 +6,20 @@
 /*   By: jisokang <jisokang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 12:29:33 by jisokang          #+#    #+#             */
-/*   Updated: 2021/10/24 20:32:41 by jisokang         ###   ########.fr       */
+/*   Updated: 2021/10/25 20:20:40 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /* gcc -lreadline *.c */
 
-/* readline함수를 사용하기위한 헤더 */
-# include <readline/readline.h>
-
-/* add_history함수를 사용하기위한 헤더 */
-# include <readline/history.h>
-
-/* printf함수를 사용하기위한 헤더 */
-# include <stdio.h>
-
-/* free함수를 사용하기위한 헤더 */
-# include <stdlib.h>
-
-# include "../lib/include/libft.h"
-# include "color.h"
+# include "../include/minishell.h"
 
 #define		SPACE	1
 # define	DO_QUOTE	"\""
 
 int	parse(char *script)
 {
+	t_lst	*head;
 	char	**str;
 	int		i;
 	int		j;
@@ -67,12 +55,15 @@ int	parse(char *script)
 		i++;
 	}
 	j = 0;
+	head = NULL;
 	while (j < i)
 	{
-		printf("[%s]\n", str[j]);
+		printf("[%d]-[%s]\n", j, str[j]);
+		lst_add_back(&head, lst_new(str[j]));
 		j++;
 	}
 	printf("value : %s\n", script);
+	print_lst_nul(head);
 	return (EXIT_SUCCESS);
 }
 
