@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 12:29:33 by jisokang          #+#    #+#             */
-/*   Updated: 2021/10/28 18:10:42 by jisokang         ###   ########.fr       */
+/*   Updated: 2021/10/28 21:11:22 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,7 @@ int	tokenizer(char *script, char ***strs)
 	while ((*strs)[i])
 	{
 		/* revert_quote */
+		printf("[%s]\n", (*strs)[i]);
 		i++;
 	}
 	return (EXIT_SUCCESS);
@@ -96,7 +97,6 @@ int	parse(char *script)
 	//lexer(script, tokens);
 	//relace_env();
 	//parser();
-
 	return (EXIT_SUCCESS);
 }
 
@@ -113,7 +113,7 @@ int	main(void)
 		str = readline("prompt : ");/* read함수는 저장한 문자열의 메모리주소를 반환한다 */
 		if (str)/* 입력이 된다면 (주소가 존재한다면) */
 		{
-			printf("%s\n", str);/* 주소안에 문자열을 출력해보자 */
+			printf("input : %s\n", str);/* 주소안에 문자열을 출력해보자 */
 			parse(str);
 		}
 		else/* str = NULL 이라면 (EOF, cntl + D)*/

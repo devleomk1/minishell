@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 20:12:15 by jisokang          #+#    #+#             */
-/*   Updated: 2021/10/28 17:12:10 by jisokang         ###   ########.fr       */
+/*   Updated: 2021/10/28 21:10:37 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -163,10 +163,10 @@ void	print_lst_nul(t_lst *head)
 	curr = head;
 	while (curr->next != NULL)
 	{
-		printf("[%s] ", curr->value);
+		//printf("[%s] ", curr->value); void 변환 필요
 		curr = curr->next;
 	}
-	printf("[%s] \n", curr->value);
+	//printf("[%s] \n", curr->value);
 }
 
 /* list -> **str function */
