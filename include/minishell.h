@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 12:29:51 by jisokang          #+#    #+#             */
-/*   Updated: 2021/10/25 19:32:50 by jisokang         ###   ########.fr       */
+/*   Updated: 2021/10/28 17:17:42 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,11 @@
 
 typedef struct s_lst
 {
-	char			*value;
-	//char			c;
+	void			*value;
 	struct s_lst	*next;
 }					t_lst;
 
-t_lst	*lst_new(char *value);
+t_lst	*lst_new(void *value);
 void	lst_insert(t_lst *before, t_lst *new);
 void	lst_add_front(t_lst **lst, t_lst *new);
 void	lst_add_back(t_lst **lst, t_lst *new);

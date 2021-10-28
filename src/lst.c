@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 20:12:15 by jisokang          #+#    #+#             */
-/*   Updated: 2021/10/25 20:41:58 by jisokang         ###   ########.fr       */
+/*   Updated: 2021/10/28 17:12:10 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ t_lst	*lst_search(t_lst *head, char *target)
 	return (curr);
 }
 
-t_lst	*lst_new(char *value)	//int value 아님 암튼 아님;
+t_lst	*lst_new(void *value)	//int value 아님 암튼 아님;
 {
 	t_lst	*new;
 
@@ -56,11 +56,17 @@ t_lst	*lst_new(char *value)	//int value 아님 암튼 아님;
 	if (new == NULL)
 	{
 		printf(RED"MALLOC ERROR\n"RESET);
-		return (NULL);
+		exit(12); //12가 무엇인지 확인해보기
+
 	}
 	new->value = value;
 	new->next = NULL;
 	return (new);
+}
+
+t_lst	*lst_init()
+{
+	return (lst_new(NULL));
 }
 
 void	lst_insert(t_lst *before, t_lst *new)
@@ -85,6 +91,21 @@ void	lst_clear(t_lst *head)
 		if (curr == head)
 			return ;
 	}
+}
+
+int	lst_size(t_lst *head)
+{
+	int		size;
+	t_lst	*curr;
+
+	size = 0;
+	curr = head->next;
+	while (curr)
+	{
+		size++;
+		curr = curr->next;
+	}
+	return (size);
 }
 
 void	lst_del(t_lst *lst)

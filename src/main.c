@@ -6,7 +6,7 @@
 /*   By: jisokang <jisokang@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 12:29:33 by jisokang          #+#    #+#             */
-/*   Updated: 2021/10/25 20:20:40 by jisokang         ###   ########.fr       */
+/*   Updated: 2021/10/28 18:10:42 by jisokang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #define		SPACE	1
 # define	DO_QUOTE	"\""
 
-int	parse(char *script)
+int	old_parse(char *script)
 {
 	t_lst	*head;
 	char	**str;
@@ -64,6 +64,39 @@ int	parse(char *script)
 	}
 	printf("value : %s\n", script);
 	print_lst_nul(head);
+	printf("insert_TEST\n");
+
+	return (EXIT_SUCCESS);
+}
+
+int	tokenizer(char *script, char ***strs)
+{
+	int	i;
+	//convert_quote
+	//convert_symbols
+	*strs = ft_split(script, ' ');
+	i = 0;
+	while ((*strs)[i])
+	{
+		/* revert_quote */
+		i++;
+	}
+	return (EXIT_SUCCESS);
+}
+
+/**
+ * @param script string entered at the prompt
+ */
+int	parse(char *script)
+{
+	//t_lst	*tokens;
+	char	**strs;	//token들을 저장할 2차원 배열
+
+	tokenizer(script, &strs);
+	//lexer(script, tokens);
+	//relace_env();
+	//parser();
+
 	return (EXIT_SUCCESS);
 }
 
